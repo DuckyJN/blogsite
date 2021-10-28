@@ -1,0 +1,76 @@
+$content-width: 66%;
+$nav-height: 55px;
+$nav-background: #252525;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581DC;
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navigation {
+    height: $nav-height;
+    background: $nav-background;
+    box-shadow: 0px 2px 5px #808080;
+}
+
+.topnav {
+    width: $content-width;
+    margin: 0 auto;
+    line-height: $nav-height;
+    position: sticky;
+    top: 0;
+
+    &--navheader {
+        font-size: 16pt;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topnav {
+        width: 90%;
+    }
+}
+
+.site-logo {
+    background-color: #FFFFFF;
+    color: #262626;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+.site-login {
+    background-color: $nav-background;
+    color: #0096FF;
+}
+
+.site-register {
+    background-color: #0096FF;
+    color: #252525;
+}
+
+a.site-logo:hover {
+    background-color: #CCCCCC;
+    transition: 0.3s;
+}
+
+.site-login:hover {
+    background-color: #333333;
+}
+
+.site-register:hover {
+    background-color: #0077cc;
+}
+
+nav {
+    float: right;
+    cursor: default;
+}
