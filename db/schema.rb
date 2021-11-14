@@ -13,16 +13,17 @@
 ActiveRecord::Schema.define(version: 2021_10_25_075717) do
 
   create_table "articles", charset: "utf8mb4", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "subheader"
-    t.text "body"
-    t.integer "user_id"
+    t.text "body", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
     t.string "username", null: false
+    t.integer "user_id", null: false
     t.string "first_name", null: false
     t.string "last_name"
     t.integer "gender", null: false
@@ -32,12 +33,8 @@ ActiveRecord::Schema.define(version: 2021_10_25_075717) do
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "encrypted_password", null: false
-    t.string "first_name", null: false
-    t.string "last_name"
-    t.integer "gender", null: false
-    t.date "birthday", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "role"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

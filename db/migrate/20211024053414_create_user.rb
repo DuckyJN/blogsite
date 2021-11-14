@@ -3,10 +3,6 @@ class CreateUser < ActiveRecord::Migration[6.1]
     create_table :users do |t|
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :first_name, null: false
-      t.string :last_name
-      t.integer :gender, null: false
-      t.date :birthday, null: false
       t.string :role
 
       ## Recoverable

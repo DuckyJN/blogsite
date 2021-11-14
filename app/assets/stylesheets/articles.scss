@@ -1,3 +1,47 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'variables';
+
+.article-feed {
+    margin-top: $content-spacing;
+}
+
+.article-card {
+    background-color: #192841;
+    align-items: center;
+    border: 1px solid #6E6D6F;
+    border-radius: 6px;
+    margin: 0 8px $content-spacing 8px;
+    padding: $content-spacing 14px;
+
+    &--user-section {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &--profile-icon {
+        top: 50%;
+        font-size: 32px;
+    }
+
+    &--info {
+        padding-left: $content-spacing;
+        line-height: 1;
+    }
+
+    &--user {
+        font-size: 14px;
+        color: #4B8CA7;
+    }
+
+    &--link {
+        margin-left: $content-spacing;
+        text-decoration: none;
+        font-size: 24px;
+        color: #C7C4CA;
+        line-height: 1;
+    }
+}
+
+.date {
+    color: #ACD4C9;
+    font-size: 12px;
+}

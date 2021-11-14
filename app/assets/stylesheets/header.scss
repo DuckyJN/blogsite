@@ -1,8 +1,4 @@
-$content-width: 66%;
-$nav-height: 55px;
-$nav-background: #252525;
-$nav-font-color: #ffffff;
-$link-hover-color: #2581DC;
+@import 'variables';
 
 body {
     padding: 0;
@@ -16,7 +12,7 @@ body {
 .navigation {
     height: $nav-height;
     background: $nav-background;
-    box-shadow: 0px 2px 5px #808080;
+    box-shadow: 0px 1px 3px #6E6D6F;
 }
 
 .topnav {
