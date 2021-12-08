@@ -1,4 +1,5 @@
 @import 'variables';
+@import '_mixins';
 
 body {
     padding: 0;
@@ -45,11 +46,22 @@ body {
 .site-login {
     background-color: $nav-background;
     color: #0096FF;
+    margin-right: 0.5rem;
 }
 
 .site-register {
     background-color: #0096FF;
     color: #252525;
+}
+
+.site-article {
+    background-color: #0096FF;
+    margin-right: 0.5rem;
+}
+
+.site-logout {
+    background-color: $nav-background;
+    color: #CCCCCC;
 }
 
 a.site-logo:hover {
@@ -59,13 +71,28 @@ a.site-logo:hover {
 
 .site-login:hover {
     background-color: #333333;
+    transition: 0.3s;
 }
 
 .site-register:hover {
     background-color: #0077cc;
+    transition: 0.3s;
 }
 
+.site-article:hover {
+    background-color: #0077cc;
+    transition: 0.3s;
+}
+
+.site-logout:hover {
+    background-color: #D6444D;
+    transition: 0.3s;
+}
+
+
+
 nav {
+    display: flex;
     float: right;
     cursor: default;
 }

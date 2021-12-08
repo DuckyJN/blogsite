@@ -3,8 +3,13 @@
         <div class='topnav--navheader'>
             <a href='/' class='site-logo'>DuckLog</a>
             <nav>
-                <button class='site-login'>Login</button>
-                <button class='site-register'>Register</button>
+            <% if user_signed_in? %>
+                <%= button_to "Create Article", new_article_path, method: :get, class: 'button site-article' %>
+                <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button site-logout' %>
+            <% else %>
+                <%= button_to "Login", sign_in_path, method: :get, class: 'button site-login' %>
+                <%= button_to "Register", sign_up_path, method: :get, class: 'button site-register' %>
+            <% end %>
             </nav>
         </div>
     </div>
