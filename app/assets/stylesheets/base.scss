@@ -26,3 +26,12 @@ input + a {
 .button {
     @include button;
 }
+
+trix-toolbar {
+    margin-top: 1ch;
+
+    .trix-button--icon {
+        -webkit-filter: invert(100%);
+     }
+}
+

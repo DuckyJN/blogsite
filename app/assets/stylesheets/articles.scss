@@ -1,4 +1,5 @@
 @import 'variables';
+@import '_mixins';
 
 .article-feed {
     margin-top: $content-spacing;
@@ -45,4 +46,27 @@
 .date {
     color: #ACD4C9;
     font-size: 0.75rem;
+}
+
+.article-create {
+    @include account-modal;
+    width: 80vw;
+}
+
+.article-show {
+    @include account-modal;
+    width: 80vw;
+}
+
+#article_title, #article_subheader, #article_body {
+    width: 100%;
+    background-color: #DECFAC;
+    // background-color: #A28AA0;
+    padding: 1ch;
+    border-radius: 6px;;
+    margin-top: 1ch;
+}
+
+#article_body {
+    height: 150px;
 }
