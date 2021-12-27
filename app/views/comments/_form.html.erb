@@ -1,12 +1,12 @@
 <%= form_for [ @article, @comment ] do |f| %>
   <p>
-    <%= f.label "Comment as #{@article.user.profile.username}" %>
+    <%= f.label "#{@article.user.profile.username}" %>
     <%= f.hidden_field 'user_id', value: current_user.id %>
   </p>
   <p>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: 'comment-area' %>
   </p>
-  <p>
-    <%= f.submit 'Submit' %>
+  <p class='comment-submit'>
+  <%= f.submit 'Submit', class: 'comment-btn' %>
   </p>
 <% end %>
