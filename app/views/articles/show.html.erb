@@ -1,21 +1,26 @@
-<section class='article-show'>
+<div class='action-buttons'>
   <% if current_user.id == @article.user_id %>
-    <%= link_to 'Edit', edit_article_path(@article) %>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'button' %>
   <% end %>
-  <%= link_to 'Back', articles_path %>
+  <%= link_to 'Back', articles_path, class: 'button prev-btn' %>
+</div>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-  </p>
+<section class='article-show'>
+  <div class='article-header'>
+    <h1><%= @article.title %></h1>
+    <h2><%= @article.subheader %></h2>
+  </div>
 
-  <p>
-    <strong>Subheader:</strong>
-    <%= @article.subheader %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
+  <div class='article-content'>
     <%= @article.body %>
-  </p>
+  </div>
+</section>
+
+<section class='article-show comments-create'>
+  <%= render partial: 'comments/form' %>
+</section>
+
+<section class='article-show comments-show'>
+  <h3>Comments</h3>
+  <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
 </section>

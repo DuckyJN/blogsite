@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_08_093107) do
+ActiveRecord::Schema.define(version: 2021_12_26_073041) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 2021_12_08_093107) do
     t.text "subheader"
     t.text "body", default: "''", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "article_id", null: false
+    t.integer "user_id", null: false
+    t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

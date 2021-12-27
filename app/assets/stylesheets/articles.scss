@@ -1,6 +1,13 @@
 @import 'variables';
 @import '_mixins';
 
+.action-buttons {
+    margin-inline: auto;
+    width: 80vw;
+    margin-top: 2ch;
+    margin-bottom: 0;
+}
+
 .article-feed {
     margin-top: $content-spacing;
 }
@@ -48,7 +55,7 @@
     font-size: 0.75rem;
 }
 
-.article-create {
+.article-create, .article-edit {
     @include account-modal;
     width: 80vw;
 }
@@ -61,7 +68,6 @@
 #article_title, #article_subheader, #article_body {
     width: 100%;
     background-color: #DECFAC;
-    // background-color: #A28AA0;
     padding: 1ch;
     border-radius: 6px;;
     margin-top: 1ch;
@@ -69,4 +75,31 @@
 
 #article_body {
     height: 150px;
+}
+
+.article-header {
+    text-align: left;
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: normal;
+        margin: 0;
+    }
+}
+
+.article-content {
+    text-align: left;
+}
+
+.prev-btn {
+    background-color: #AB453F;
+}
+
+.prev-btn:hover {
+    background-color: #EE6944;
+    transition: 0.3s;
 }

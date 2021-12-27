@@ -9,6 +9,8 @@ class ArticlesController < UsersController
 
   # GET /articles/1 or /articles/1.json
   def show
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   # GET /articles/new
