@@ -9,7 +9,7 @@
         <div class='article-card--info'>
           <a href='/' class='article-card--user'><%= article.user.profile.username %></a>
           <br>
-          <span class='date'><%= display_date(article.created_at) %></span>
+          <span class='date'><%= time_ago_in_words(article.created_at) %> ago</span>
         </div>
       </div>
       <h3><a href=<%= article_path(article.id) %> class='article-card--link' ><%= article.title %></a></h3>
