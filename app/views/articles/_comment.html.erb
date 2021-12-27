@@ -1,4 +1,5 @@
 <div class='comment-block'>
-  <h4><%= comment.user.profile.username %></h4>
+  <h4><%= link_to comment.user.profile.username %></h4>
+  <p><%= distance_of_time_in_words(comment.created_at, Time.now) %> ago</p>
   <p class="comment-body"><%= comment.body %></p>
 </div>

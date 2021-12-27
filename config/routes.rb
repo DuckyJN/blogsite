@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: "registrations"
+    registrations: "registrations",
+    sessions: "sessions"
+  }
+  resources :profiles, controllers: {
+    show: 'profile'
   }
 
   devise_scope :user do
