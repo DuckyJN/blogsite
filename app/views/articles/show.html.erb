@@ -1,5 +1,5 @@
 <div class='action-buttons'>
-  <% if current_user.id == @article.user_id %>
+  <% if user_signed_in? && current_user.id == @article.user_id %>
     <%= link_to 'Edit', edit_article_path(@article), class: 'button' %>
   <% end %>
   <%= link_to 'Back', articles_path, class: 'button prev-btn' %>
@@ -18,8 +18,13 @@
 
 <section class='comment'>
   <h2>Comments</h2>
-
-  <%= render partial: 'comments/form' %>
+  <% if user_signed_in? %>
+    <%= render partial: 'comments/form' %>
+  <% else %>
+    <%= link_to 'Sign in to comment', sign_in_path %>
+  <% end %>
+  <% if @article.comments.length > 0 %>
   <hr>
   <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
+  <% end %>
 </section>
